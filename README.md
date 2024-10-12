@@ -15,7 +15,7 @@ There are several test scripts within this repository. To run an individual scri
 ```
 python -m pytest .\tests\[INSERT_FILE_NAME].py
 ```
-<br /><br />
+<br/>
 
 This will execute the Automation Test Script for a given file. The Automation takes place in a Chrome Browser so ensure Chrome is downloaded before test execution. <br /><br />
 Running the above code will automatically open the browser and execute the given test scenarios. <br /><br />
