@@ -3,8 +3,8 @@ import pytest
 from utils.browserSetup import get_browser
 from selenium.webdriver.common.by import By
 
-# This file will run the test to see the answer in the Help page regarding bringing liquids through security
-# in your carry-on
+# This file will run the test to see the answer in the Help page regarding 
+# bringing liquids through security in your carry-on
 
 # Base URL for Air Canada website
 BASE_URL = "https://www.aircanada.com/"
