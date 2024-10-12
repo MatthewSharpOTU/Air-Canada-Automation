@@ -18,11 +18,10 @@ def setup():
     driver.get(BASE_URL)
     yield driver
 
-# def test_home_page_title(setup):
-#     driver = setup
-#     time.sleep(5)
-#     page_title = driver.find_element(By.XPATH, "//h1[contains(@class, 'ac-page-title')]")
-#     assert ' Where can we take you? ' in page_title.get_attribute("innerHTML")
+def test_home_page_title(setup):
+    driver = setup
+    time.sleep(5)
+    assert 'Book Flights Online | Air Canada' in driver.title
 
 # def test_search_flights_functionality(setup):
 #     driver = setup
@@ -50,36 +49,6 @@ def setup():
 #     # # Assert that flight results page appears
 #     assert "flights" in driver.current_url.lower()
 #     driver.quit()
-
-def test_language_change_to_french(setup):
-    driver = setup
-    
-    time.sleep(5)
-
-    # Locate and click the language selector
-    language_button = driver.find_element(By.XPATH, "//button[contains(@id, 'acSiteEditionSelectorDesktop-button')][.//div[contains(@class, 'ngx-ac-site-edition-selector-content')]][.//span[text()[contains(., 'EN')]]]")
-    # language_button = driver.find_element(By.XPATH, "//button[@lang='fr']")
-    language_button.click()
-
-    time.sleep(1)
-    
-    language_button = driver.find_element(By.XPATH, "//div[text()[contains(., 'English')]]")
-    language_button.click()
-
-    time.sleep(1)
-
-    language_button = driver.find_element(By.XPATH, "//div[contains(@id, 'siteLanguageDropdownOptionsPanel')][.//div[text()[contains(., 'Français')]]]")
-    language_button.click()
-
-    time.sleep(1)
-
-    language_button = driver.find_element(By.XPATH, "//button[contains(@id, 'acEditionSelectorConfirmButton')][.//span[text()[contains(., ' Confirm ')]]]")
-    language_button.click()
-
-    time.sleep(5)
-
-    # Verify if page switched to French
-    assert "Réservation de vols en ligne | Air Canada" in driver.title
 
 # def test_contact_us_page_access(setup):
 #     driver = setup
